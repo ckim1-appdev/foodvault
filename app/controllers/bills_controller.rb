@@ -10,7 +10,8 @@ class BillsController < ApplicationController
   end
 
   def index
-    @bills = current_user.bills.page(params[:page]).per(10)
+    @q = current_user.bills.ransack(params[:q])
+    @bills = @q.result(:distinct => true).includes(:user, :billhasingredients, :ingredients).page(params[:page]).per(10)
 
     render("bill_templates/index.html.erb")
   end

@@ -1,6 +1,7 @@
 class BillHasIngredientsController < ApplicationController
   def index
-    @bill_has_ingredients = BillHasIngredient.page(params[:page]).per(10)
+    @q = BillHasIngredient.ransack(params[:q])
+    @bill_has_ingredients = @q.result(:distinct => true).includes(:ingredient, :bill).page(params[:page]).per(10)
 
     render("bill_has_ingredient_templates/index.html.erb")
   end

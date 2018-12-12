@@ -1,0 +1,159 @@
+<%= search_form_for @q, :class => collapse_search_form, :id => "ingredients_filters" do |f| %>
+  <p class="lead">Narrow results:</p>
+
+  <div class="form-group">
+    <%= f.label :name_cont, "Name contains" %>
+    <%= f.text_field :name_cont, :class => "form-control", :placeholder => "Name contains" %>
+  </div>
+
+  <div class="form-group">
+    <%= f.label :image_cont, "Image contains" %>
+    <%= f.text_field :image_cont, :class => "form-control", :placeholder => "Image contains" %>
+  </div>
+
+  <div class="form-group">
+    <%= f.label :food_group_cont, "Food group contains" %>
+    <%= f.text_field :food_group_cont, :class => "form-control", :placeholder => "Food group contains" %>
+  </div>
+
+  <div class="form-group">
+    <%= f.label :quality_cont, "Quality contains" %>
+    <%= f.text_field :quality_cont, :class => "form-control", :placeholder => "Quality contains" %>
+  </div>
+
+  <div class="form-group">
+    <%= f.label :created_at, "Created at" %>
+    <div class="row">
+      <div class='col-md-6 mb-1'>
+        <div class='input-group date' id='created_atgteqPicker' data-target-input="nearest">
+          <%= f.text_field :created_at_gteq, :class => "form-control datetimepicker-input", :placeholder => "Created at greater than or equal to", :data => {:target => '#created_atgteqPicker'} %>
+          <div class="input-group-append" data-target='#created_atgteqPicker' data-toggle="datetimepicker">
+            <div class="input-group-text"><i class="fa fa-calendar"></i></div>
+          </div>
+        </div>
+      </div>
+
+      <div class='col-md-6'>
+        <div class='input-group date' id='created_atlteqPicker' data-target-input="nearest">
+          <%= f.text_field :created_at_lteq, :class => "form-control datetimepicker-input", :placeholder => "Created at less than or equal to", :data => {:target => '#created_atlteqPicker'} %>
+          <div class="input-group-append" data-target='#created_atlteqPicker' data-toggle="datetimepicker">
+            <div class="input-group-text"><i class="fa fa-calendar"></i></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <script type="text/javascript">
+      $(function () {
+          $('#created_atgteqPicker').datetimepicker({
+              format: 'YYYY-MM-DD hh:mm:SS'
+          });
+          $('#created_atlteqPicker').datetimepicker({
+              useCurrent: false,
+              format: 'YYYY-MM-DD hh:mm:SS'
+          });
+          $('#created_atgteqPicker').on("dp.change", function (e) {
+              $('#created_atlteqPicker').data("DateTimePicker").minDate(e.date);
+          });
+          $('#created_atlteqPicker').on("dp.change", function (e) {
+              $('#created_atgteqPicker').data("DateTimePicker").maxDate(e.date);
+          });
+      });
+  </script>
+
+
+  <div class="form-group">
+    <%= f.label :created_at, "User Created at" %>
+    <div class="row">
+      <div class='col-md-6 mb-1'>
+        <div class='input-group date' id='directorgteqcreated_atPicker' data-target-input="nearest">
+          <%= f.text_field :director_created_at_gteq, :class => "form-control datetimepicker-input", :placeholder => "User Created at greater than or equal to", :data => {:target => '#directorgteqcreated_atPicker'} %>
+          <div class="input-group-append" data-target='#directorgteqcreated_atPicker' data-toggle="datetimepicker">
+            <div class="input-group-text"><i class="fa fa-calendar"></i></div>
+          </div>
+        </div>
+      </div>
+
+      <div class='col-md-6'>
+        <div class='input-group date' id='directorlteqcreated_atPicker' data-target-input="nearest">
+          <%= f.text_field :director_created_at_lteq, :class => "form-control datetimepicker-input", :placeholder => "User Created at less than or equal to", :data => {:target => '#directorlteqcreated_atPicker'} %>
+          <div class="input-group-append" data-target='#directorlteqcreated_atPicker' data-toggle="datetimepicker">
+            <div class="input-group-text"><i class="fa fa-calendar"></i></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <script type="text/javascript">
+      $(function () {
+          $('#directorgteqcreated_atPicker').datetimepicker({
+              format: 'YYYY-MM-DD hh:mm:SS'
+          });
+          $('#directorlteqcreated_atPicker').datetimepicker({
+              useCurrent: false,
+              format: 'YYYY-MM-DD hh:mm:SS'
+          });
+          $('#directorgteqcreated_atPicker').on("dp.change", function (e) {
+              $('#directorlteqcreated_atPicker').data("DateTimePicker").minDate(e.date);
+          });
+          $('#directorlteqcreated_atPicker').on("dp.change", function (e) {
+              $('#directorgteqcreated_atPicker').data("DateTimePicker").maxDate(e.date);
+          });
+      });
+  </script>
+
+  <div class="form-group">
+    <%= f.label :dishes_name_cont, "Dish name contains" %>
+    <%= f.text_field :dishes_name_cont, :class => "form-control", :placeholder => "Dish name contains" %>
+  </div>
+
+  <div class="form-group">
+    <%= f.label :created_at, "Bill Created at" %>
+    <div class="row">
+      <div class='col-md-6 mb-1'>
+        <div class='input-group date' id='billsgteqcreated_atPicker' data-target-input="nearest">
+          <%= f.text_field :bills_created_at_gteq, :class => "form-control datetimepicker-input", :placeholder => "Bill Created at greater than or equal to", :data => {:target => '#billsgteqcreated_atPicker'} %>
+          <div class="input-group-append" data-target='#billsgteqcreated_atPicker' data-toggle="datetimepicker">
+            <div class="input-group-text"><i class="fa fa-calendar"></i></div>
+          </div>
+        </div>
+      </div>
+
+      <div class='col-md-6'>
+        <div class='input-group date' id='billslteqcreated_atPicker' data-target-input="nearest">
+          <%= f.text_field :bills_created_at_lteq, :class => "form-control datetimepicker-input", :placeholder => "Bill Created at less than or equal to", :data => {:target => '#billslteqcreated_atPicker'} %>
+          <div class="input-group-append" data-target='#billslteqcreated_atPicker' data-toggle="datetimepicker">
+            <div class="input-group-text"><i class="fa fa-calendar"></i></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <script type="text/javascript">
+      $(function () {
+          $('#billsgteqcreated_atPicker').datetimepicker({
+              format: 'YYYY-MM-DD hh:mm:SS'
+          });
+          $('#billslteqcreated_atPicker').datetimepicker({
+              useCurrent: false,
+              format: 'YYYY-MM-DD hh:mm:SS'
+          });
+          $('#billsgteqcreated_atPicker').on("dp.change", function (e) {
+              $('#billslteqcreated_atPicker').data("DateTimePicker").minDate(e.date);
+          });
+          $('#billslteqcreated_atPicker').on("dp.change", function (e) {
+              $('#billsgteqcreated_atPicker').data("DateTimePicker").maxDate(e.date);
+          });
+      });
+  </script>
+
+
+  <%= f.submit :class => "btn btn-primary btn-block mb-1" %>
+
+  <a href="/ingredients" class="btn btn-outline-secondary btn-block mb-1">Clear filters</a>
+
+<% end %>
+
+<a class="btn btn-outline-secondary btn-block mb-1" data-toggle="collapse" href="#ingredients_filters">
+  Show filters
+</a>
