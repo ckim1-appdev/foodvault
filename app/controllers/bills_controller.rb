@@ -6,6 +6,7 @@ class BillsController < ApplicationController
   end
 
   def show
+    @bill_has_ingredient = BillHasIngredient.new
     @bill = Bill.find(params.fetch("id_to_display"))
 
     render("bill_templates/show.html.erb")

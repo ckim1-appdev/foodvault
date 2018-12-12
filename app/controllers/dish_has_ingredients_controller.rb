@@ -34,6 +34,40 @@ class DishHasIngredientsController < ApplicationController
     end
   end
 
+  def create_row_from_ingredient
+    @dish_has_ingredient = DishHasIngredient.new
+
+    @dish_has_ingredient.dish_id = params.fetch("dish_id")
+    @dish_has_ingredient.ingredient_id = params.fetch("ingredient_id")
+    @dish_has_ingredient.quantity = params.fetch("quantity")
+    @dish_has_ingredient.dish_ingredient_unit = params.fetch("dish_ingredient_unit")
+
+    if @dish_has_ingredient.valid?
+      @dish_has_ingredient.save
+
+      redirect_to("/ingredients/#{@dish_has_ingredient.ingredient_id}", notice: "DishHasIngredient created successfully.")
+    else
+      render("dish_has_ingredient_templates/new_form_with_errors.html.erb")
+    end
+  end
+
+  def create_row_from_dish
+    @dish_has_ingredient = DishHasIngredient.new
+
+    @dish_has_ingredient.dish_id = params.fetch("dish_id")
+    @dish_has_ingredient.ingredient_id = params.fetch("ingredient_id")
+    @dish_has_ingredient.quantity = params.fetch("quantity")
+    @dish_has_ingredient.dish_ingredient_unit = params.fetch("dish_ingredient_unit")
+
+    if @dish_has_ingredient.valid?
+      @dish_has_ingredient.save
+
+      redirect_to("/dishes/#{@dish_has_ingredient.dish_id}", notice: "DishHasIngredient created successfully.")
+    else
+      render("dish_has_ingredient_templates/new_form_with_errors.html.erb")
+    end
+  end
+
   def edit_form
     @dish_has_ingredient = DishHasIngredient.find(params.fetch("prefill_with_id"))
 

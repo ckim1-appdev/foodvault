@@ -34,6 +34,40 @@ class BillHasIngredientsController < ApplicationController
     end
   end
 
+  def create_row_from_ingredient
+    @bill_has_ingredient = BillHasIngredient.new
+
+    @bill_has_ingredient.bill_id = params.fetch("bill_id")
+    @bill_has_ingredient.ingredient_id = params.fetch("ingredient_id")
+    @bill_has_ingredient.quantity = params.fetch("quantity")
+    @bill_has_ingredient.bill_ingredient_unit = params.fetch("bill_ingredient_unit")
+
+    if @bill_has_ingredient.valid?
+      @bill_has_ingredient.save
+
+      redirect_to("/ingredients/#{@bill_has_ingredient.ingredient_id}", notice: "BillHasIngredient created successfully.")
+    else
+      render("bill_has_ingredient_templates/new_form_with_errors.html.erb")
+    end
+  end
+
+  def create_row_from_bill
+    @bill_has_ingredient = BillHasIngredient.new
+
+    @bill_has_ingredient.bill_id = params.fetch("bill_id")
+    @bill_has_ingredient.ingredient_id = params.fetch("ingredient_id")
+    @bill_has_ingredient.quantity = params.fetch("quantity")
+    @bill_has_ingredient.bill_ingredient_unit = params.fetch("bill_ingredient_unit")
+
+    if @bill_has_ingredient.valid?
+      @bill_has_ingredient.save
+
+      redirect_to("/bills/#{@bill_has_ingredient.bill_id}", notice: "BillHasIngredient created successfully.")
+    else
+      render("bill_has_ingredient_templates/new_form_with_errors.html.erb")
+    end
+  end
+
   def edit_form
     @bill_has_ingredient = BillHasIngredient.find(params.fetch("prefill_with_id"))
 

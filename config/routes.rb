@@ -7,6 +7,8 @@ Rails.application.routes.draw do
   # CREATE
   get("/dish_has_ingredients/new", { :controller => "dish_has_ingredients", :action => "new_form" })
   post("/create_dish_has_ingredient", { :controller => "dish_has_ingredients", :action => "create_row" })
+  post("/create_dish_has_ingredient_from_dish", { :controller => "dish_has_ingredients", :action => "create_row_from_dish" })
+  post("/create_dish_has_ingredient_from_ingredient", { :controller => "dish_has_ingredients", :action => "create_row_from_ingredient" })
 
   # READ
   get("/dish_has_ingredients", { :controller => "dish_has_ingredients", :action => "index" })
@@ -28,6 +30,8 @@ Rails.application.routes.draw do
   # CREATE
   get("/bill_has_ingredients/new", { :controller => "bill_has_ingredients", :action => "new_form" })
   post("/create_bill_has_ingredient", { :controller => "bill_has_ingredients", :action => "create_row" })
+  post("/create_bill_has_ingredient_from_bill", { :controller => "bill_has_ingredients", :action => "create_row_from_bill" })
+  post("/create_bill_has_ingredient_from_ingredient", { :controller => "bill_has_ingredients", :action => "create_row_from_ingredient" })
 
   # READ
   get("/bill_has_ingredients", { :controller => "bill_has_ingredients", :action => "index" })
