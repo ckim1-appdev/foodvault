@@ -1,4 +1,6 @@
 ActiveAdmin.register Dish do
+
+ permit_params :name, :cuisine, :meal_category, :picture, :description, :ingredient_count
 # See permitted parameters documentation:
 # https://github.com/activeadmin/activeadmin/blob/master/docs/2-resource-customization.md#setting-up-strong-parameters
 #
