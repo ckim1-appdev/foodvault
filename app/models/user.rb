@@ -1,6 +1,9 @@
 class User < ApplicationRecord
   # Direct associations
 
+  has_many   :bills,
+             :dependent => :destroy
+
   has_many   :filmography,
              :class_name => "Ingredient",
              :dependent => :nullify
