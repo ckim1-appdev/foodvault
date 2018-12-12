@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  root :to => "ingredients#index"
   # Routes for the Dish has ingredient resource:
 
   # CREATE
