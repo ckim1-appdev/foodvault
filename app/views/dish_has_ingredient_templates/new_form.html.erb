@@ -1,0 +1,69 @@
+<h1>
+  Add a new dish has ingredient
+</h1>
+
+
+<hr>
+
+<!-- Form dish_has_ingredient start -->
+<form action="/create_dish_has_ingredient" method="post">
+<!-- Form dish_has_ingredient end -->
+
+  <!-- Label and input for dish_id start -->
+  <div class="form-group">
+    <label for="dish_id">
+      Dish
+    </label>
+
+    <!-- Input for dish_id start -->
+    <input type="text" id="dish_id" name="dish_id" class="form-control">
+    <!-- Input for dish_id end -->
+  </div>
+  <!-- Label and input for dish_id end -->
+
+  <!-- Label and input for ingredient_id start -->
+  <div class="form-group">
+    <label for="ingredient_id">
+      Ingredient
+    </label>
+
+    <!-- Input for ingredient_id start -->
+    <input type="text" id="ingredient_id" name="ingredient_id" class="form-control">
+    <!-- Input for ingredient_id end -->
+  </div>
+  <!-- Label and input for ingredient_id end -->
+
+  <!-- Label and input for quantity start -->
+  <div class="form-group">
+    <label for="quantity">
+      Quantity
+    </label>
+
+    <!-- Input for quantity start -->
+    <input type="text" id="quantity" name="quantity" class="form-control">
+    <!-- Input for quantity end -->
+  </div>
+  <!-- Label and input for quantity end -->
+
+  <!-- Label and input for dish_ingredient_unit start -->
+  <div class="form-group">
+    <label for="dish_ingredient_unit">
+      Dish ingredient unit
+    </label>
+
+    <!-- Input for dish_ingredient_unit start -->
+    <textarea id="dish_ingredient_unit" name="dish_ingredient_unit" class="form-control" rows="3"></textarea>
+    <!-- Input for dish_ingredient_unit end -->
+  </div>
+  <!-- Label and input for dish_ingredient_unit end -->
+
+  <button class="btn btn-block btn-outline-secondary">
+    Create dish has ingredient
+  </button>
+</form>
+
+<hr>
+
+<a href="/dish_has_ingredients">
+  Go back
+</a>
