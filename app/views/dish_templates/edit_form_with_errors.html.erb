@@ -1,0 +1,101 @@
+<!-- Validation failure messages -->
+<% if @dish.errors.any? %>
+  <% @dish.errors.full_messages.each do |message| %>
+    <div class="alert">
+      <%= message %>
+    </div>
+  <% end %>
+<% end %>
+
+<h1>
+  Edit dish #<%= @dish.id %>
+</h1>
+
+<hr>
+
+<!-- Form dish start -->
+<form action="/update_dish/<%= @dish.id %>" method="post">
+<!-- Form dish end -->
+
+  <!-- Label and input for name start -->
+  <div class="form-group">
+    <label for="name">
+      Name
+    </label>
+
+    <!-- Input for name start -->
+    <textarea id="name" name="name" class="form-control" rows="3"><%= @dish.name %></textarea>
+    <!-- Input for name end -->
+  </div>
+  <!-- Label and input for name end -->
+
+  <!-- Label and input for cuisine start -->
+  <div class="form-group">
+    <label for="cuisine">
+      Cuisine
+    </label>
+
+    <!-- Input for cuisine start -->
+    <textarea id="cuisine" name="cuisine" class="form-control" rows="3"><%= @dish.cuisine %></textarea>
+    <!-- Input for cuisine end -->
+  </div>
+  <!-- Label and input for cuisine end -->
+
+  <!-- Label and input for meal_category start -->
+  <div class="form-group">
+    <label for="meal_category">
+      Meal category
+    </label>
+
+    <!-- Input for meal_category start -->
+    <textarea id="meal_category" name="meal_category" class="form-control" rows="3"><%= @dish.meal_category %></textarea>
+    <!-- Input for meal_category end -->
+  </div>
+  <!-- Label and input for meal_category end -->
+
+  <!-- Label and input for picture start -->
+  <div class="form-group">
+    <label for="picture">
+      Picture
+    </label>
+
+    <!-- Input for picture start -->
+    <input type="text" id="picture" name="picture" class="form-control" value="<%= @dish.picture %>">
+    <!-- Input for picture end -->
+  </div>
+  <!-- Label and input for picture end -->
+
+  <!-- Label and input for description start -->
+  <div class="form-group">
+    <label for="description">
+      Description
+    </label>
+
+    <!-- Input for description start -->
+    <textarea id="description" name="description" class="form-control" rows="3"><%= @dish.description %></textarea>
+    <!-- Input for description end -->
+  </div>
+  <!-- Label and input for description end -->
+
+  <!-- Label and input for ingredient_count start -->
+  <div class="form-group">
+    <label for="ingredient_count">
+      Ingredient count
+    </label>
+
+    <!-- Input for ingredient_count start -->
+    <input type="text" id="ingredient_count" name="ingredient_count" class="form-control" value="<%= @dish.ingredient_count %>">
+    <!-- Input for ingredient_count end -->
+  </div>
+  <!-- Label and input for ingredient_count end -->
+
+  <button class="btn btn-block btn-outline-secondary">
+    Update dish
+  </button>
+</form>
+
+<hr>
+
+<a href="/dishes">
+  Go back
+</a>
