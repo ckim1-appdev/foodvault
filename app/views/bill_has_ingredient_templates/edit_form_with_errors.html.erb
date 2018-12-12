@@ -24,7 +24,7 @@
     </label>
 
     <!-- Input for bill_id start -->
-    <input type="text" id="bill_id" name="bill_id" class="form-control" value="<%= @bill_has_ingredient.bill_id %>">
+    <%= select_tag(:bill_id, options_from_collection_for_select(Bill.all, :id, :created_at, @bill_has_ingredient.bill_id), :class => "form-control") %>
     <!-- Input for bill_id end -->
   </div>
   <!-- Label and input for bill_id end -->
