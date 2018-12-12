@@ -66,13 +66,21 @@
 
         <!-- Display dish_has_ingredient.dish_id start -->
         <td>
-          <%= dish_has_ingredient.dish.name %>
+          <% if dish_has_ingredient.dish.present? %>
+            <a href="/dishes/<%= dish_has_ingredient.dish.id %>">
+              <%= dish_has_ingredient.dish.name %>
+            </a>
+          <% end %>
         </td>
         <!-- Display dish_has_ingredient.dish_id end -->
 
         <!-- Display dish_has_ingredient.ingredient_id start -->
         <td>
-          <%= dish_has_ingredient.ingredient.name %>
+          <% if dish_has_ingredient.ingredient.present? %>
+            <a href="/ingredients/<%= dish_has_ingredient.ingredient.id %>">
+              <%= dish_has_ingredient.ingredient.name %>
+            </a>
+          <% end %>
         </td>
         <!-- Display dish_has_ingredient.ingredient_id end -->
 

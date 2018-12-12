@@ -66,13 +66,21 @@
 
         <!-- Display bill_has_ingredient.bill_id start -->
         <td>
-          <%= bill_has_ingredient.bill.created_at %>
+          <% if bill_has_ingredient.bill.present? %>
+            <a href="/bills/<%= bill_has_ingredient.bill.id %>">
+              <%= bill_has_ingredient.bill.created_at %>
+            </a>
+          <% end %>
         </td>
         <!-- Display bill_has_ingredient.bill_id end -->
 
         <!-- Display bill_has_ingredient.ingredient_id start -->
         <td>
-          <%= bill_has_ingredient.ingredient.name %>
+          <% if bill_has_ingredient.ingredient.present? %>
+            <a href="/ingredients/<%= bill_has_ingredient.ingredient.id %>">
+              <%= bill_has_ingredient.ingredient.name %>
+            </a>
+          <% end %>
         </td>
         <!-- Display bill_has_ingredient.ingredient_id end -->
 

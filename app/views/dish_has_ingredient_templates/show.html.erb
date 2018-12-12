@@ -34,7 +34,11 @@
       </dt>
       <!-- Display dish_id start -->
       <dd>
-        <%= @dish_has_ingredient.dish_id %>
+        <% if @dish_has_ingredient.dish.present? %>
+          <a href="/dishes/<%= @dish_has_ingredient.dish_id %>">
+            <%= @dish_has_ingredient.dish.name %>
+          </a>
+        <% end %>
       </dd>
       <!-- Display dish_id end -->
 
@@ -43,7 +47,11 @@
       </dt>
       <!-- Display ingredient_id start -->
       <dd>
-        <%= @dish_has_ingredient.ingredient_id %>
+        <% if @dish_has_ingredient.ingredient.present? %>
+          <a href="/ingredients/<%= @dish_has_ingredient.ingredient_id %>">
+            <%= @dish_has_ingredient.ingredient.name %>
+          </a>
+        <% end %>
       </dd>
       <!-- Display ingredient_id end -->
 

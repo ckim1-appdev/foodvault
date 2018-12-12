@@ -94,7 +94,11 @@
 
         <!-- Display bill.user_id start -->
         <td>
-          <%= bill.user.created_at %>
+          <% if bill.user.present? %>
+            <a href="/users/<%= bill.user.id %>">
+              <%= bill.user.created_at %>
+            </a>
+          <% end %>
         </td>
         <!-- Display bill.user_id end -->
 

@@ -104,7 +104,11 @@
 
         <!-- Display ingredient.user_id start -->
         <td>
-          <%= ingredient.director.created_at %>
+          <% if ingredient.director.present? %>
+            <a href="/users/<%= ingredient.director.id %>">
+              <%= ingredient.director.created_at %>
+            </a>
+          <% end %>
         </td>
         <!-- Display ingredient.user_id end -->
 

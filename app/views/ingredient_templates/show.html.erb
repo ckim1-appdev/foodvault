@@ -79,7 +79,11 @@
       </dt>
       <!-- Display user_id start -->
       <dd>
-        <%= @ingredient.user_id %>
+        <% if @ingredient.director.present? %>
+          <a href="/users/<%= @ingredient.user_id %>">
+            <%= @ingredient.director.created_at %>
+          </a>
+        <% end %>
       </dd>
       <!-- Display user_id end -->
 

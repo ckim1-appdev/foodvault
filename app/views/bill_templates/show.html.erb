@@ -74,7 +74,11 @@
       </dt>
       <!-- Display user_id start -->
       <dd>
-        <%= @bill.user_id %>
+        <% if @bill.user.present? %>
+          <a href="/users/<%= @bill.user_id %>">
+            <%= @bill.user.created_at %>
+          </a>
+        <% end %>
       </dd>
       <!-- Display user_id end -->
 
