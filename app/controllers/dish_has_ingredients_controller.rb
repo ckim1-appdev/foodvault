@@ -1,6 +1,6 @@
 class DishHasIngredientsController < ApplicationController
   def index
-    @dish_has_ingredients = DishHasIngredient.all
+    @dish_has_ingredients = DishHasIngredient.page(params[:page]).per(10)
 
     render("dish_has_ingredient_templates/index.html.erb")
   end

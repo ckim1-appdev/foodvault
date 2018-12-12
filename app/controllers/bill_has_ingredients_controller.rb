@@ -1,6 +1,6 @@
 class BillHasIngredientsController < ApplicationController
   def index
-    @bill_has_ingredients = BillHasIngredient.all
+    @bill_has_ingredients = BillHasIngredient.page(params[:page]).per(10)
 
     render("bill_has_ingredient_templates/index.html.erb")
   end
