@@ -1,0 +1,69 @@
+<h1>
+  Add a new bill has ingredient
+</h1>
+
+
+<hr>
+
+<!-- Form bill_has_ingredient start -->
+<form action="/create_bill_has_ingredient" method="post">
+<!-- Form bill_has_ingredient end -->
+
+  <!-- Label and input for bill_id start -->
+  <div class="form-group">
+    <label for="bill_id">
+      Bill
+    </label>
+
+    <!-- Input for bill_id start -->
+    <input type="text" id="bill_id" name="bill_id" class="form-control">
+    <!-- Input for bill_id end -->
+  </div>
+  <!-- Label and input for bill_id end -->
+
+  <!-- Label and input for ingredient_id start -->
+  <div class="form-group">
+    <label for="ingredient_id">
+      Ingredient
+    </label>
+
+    <!-- Input for ingredient_id start -->
+    <input type="text" id="ingredient_id" name="ingredient_id" class="form-control">
+    <!-- Input for ingredient_id end -->
+  </div>
+  <!-- Label and input for ingredient_id end -->
+
+  <!-- Label and input for quantity start -->
+  <div class="form-group">
+    <label for="quantity">
+      Quantity
+    </label>
+
+    <!-- Input for quantity start -->
+    <input type="text" id="quantity" name="quantity" class="form-control">
+    <!-- Input for quantity end -->
+  </div>
+  <!-- Label and input for quantity end -->
+
+  <!-- Label and input for bill_ingredient_unit start -->
+  <div class="form-group">
+    <label for="bill_ingredient_unit">
+      Bill ingredient unit
+    </label>
+
+    <!-- Input for bill_ingredient_unit start -->
+    <textarea id="bill_ingredient_unit" name="bill_ingredient_unit" class="form-control" rows="3"></textarea>
+    <!-- Input for bill_ingredient_unit end -->
+  </div>
+  <!-- Label and input for bill_ingredient_unit end -->
+
+  <button class="btn btn-block btn-outline-secondary">
+    Create bill has ingredient
+  </button>
+</form>
+
+<hr>
+
+<a href="/bill_has_ingredients">
+  Go back
+</a>

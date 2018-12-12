@@ -1,4 +1,23 @@
 Rails.application.routes.draw do
+  # Routes for the Bill has ingredient resource:
+
+  # CREATE
+  get("/bill_has_ingredients/new", { :controller => "bill_has_ingredients", :action => "new_form" })
+  post("/create_bill_has_ingredient", { :controller => "bill_has_ingredients", :action => "create_row" })
+
+  # READ
+  get("/bill_has_ingredients", { :controller => "bill_has_ingredients", :action => "index" })
+  get("/bill_has_ingredients/:id_to_display", { :controller => "bill_has_ingredients", :action => "show" })
+
+  # UPDATE
+  get("/bill_has_ingredients/:prefill_with_id/edit", { :controller => "bill_has_ingredients", :action => "edit_form" })
+  post("/update_bill_has_ingredient/:id_to_modify", { :controller => "bill_has_ingredients", :action => "update_row" })
+
+  # DELETE
+  get("/delete_bill_has_ingredient/:id_to_remove", { :controller => "bill_has_ingredients", :action => "destroy_row" })
+
+  #------------------------------
+
   # Routes for the Dish resource:
 
   # CREATE
