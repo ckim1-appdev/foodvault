@@ -1,4 +1,6 @@
 ActiveAdmin.register Bill do
+
+ permit_params :date_purchased, :ingredient_count, :grocery_store, :price, :user_id
 # See permitted parameters documentation:
 # https://github.com/activeadmin/activeadmin/blob/master/docs/2-resource-customization.md#setting-up-strong-parameters
 #
