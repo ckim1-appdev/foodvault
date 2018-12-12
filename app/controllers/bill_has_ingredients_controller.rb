@@ -57,6 +57,22 @@ class BillHasIngredientsController < ApplicationController
     end
   end
 
+  def destroy_row_from_ingredient
+    @bill_has_ingredient = BillHasIngredient.find(params.fetch("id_to_remove"))
+
+    @bill_has_ingredient.destroy
+
+    redirect_to("/ingredients/#{@bill_has_ingredient.ingredient_id}", notice: "BillHasIngredient deleted successfully.")
+  end
+
+  def destroy_row_from_bill
+    @bill_has_ingredient = BillHasIngredient.find(params.fetch("id_to_remove"))
+
+    @bill_has_ingredient.destroy
+
+    redirect_to("/bills/#{@bill_has_ingredient.bill_id}", notice: "BillHasIngredient deleted successfully.")
+  end
+
   def destroy_row
     @bill_has_ingredient = BillHasIngredient.find(params.fetch("id_to_remove"))
 

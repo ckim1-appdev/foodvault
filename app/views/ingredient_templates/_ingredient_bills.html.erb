@@ -1,0 +1,19 @@
+<div class="card">
+  <div class="card-header d-flex align-items-center justify-content-between">
+    Bills
+  </div>
+
+  <ul class="list-group list-group-flush">
+    <% @ingredient.bills.each do |bill| %>
+      <li class="list-group-item d-flex align-items-center justify-content-between">
+        <!-- Show link start -->
+        <a href="/bills/<%= bill.id %>">
+          <%= bill.created_at %>
+        </a>
+        <!-- Show link end -->
+
+      </li>
+    <% end %>
+
+  </ul>
+</div>

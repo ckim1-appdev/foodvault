@@ -59,6 +59,14 @@ class BillsController < ApplicationController
     end
   end
 
+  def destroy_row_from_user
+    @bill = Bill.find(params.fetch("id_to_remove"))
+
+    @bill.destroy
+
+    redirect_to("/users/#{@bill.user_id}", notice: "Bill deleted successfully.")
+  end
+
   def destroy_row
     @bill = Bill.find(params.fetch("id_to_remove"))
 

@@ -57,6 +57,22 @@ class DishHasIngredientsController < ApplicationController
     end
   end
 
+  def destroy_row_from_ingredient
+    @dish_has_ingredient = DishHasIngredient.find(params.fetch("id_to_remove"))
+
+    @dish_has_ingredient.destroy
+
+    redirect_to("/ingredients/#{@dish_has_ingredient.ingredient_id}", notice: "DishHasIngredient deleted successfully.")
+  end
+
+  def destroy_row_from_dish
+    @dish_has_ingredient = DishHasIngredient.find(params.fetch("id_to_remove"))
+
+    @dish_has_ingredient.destroy
+
+    redirect_to("/dishes/#{@dish_has_ingredient.dish_id}", notice: "DishHasIngredient deleted successfully.")
+  end
+
   def destroy_row
     @dish_has_ingredient = DishHasIngredient.find(params.fetch("id_to_remove"))
 

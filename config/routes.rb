@@ -18,6 +18,8 @@ Rails.application.routes.draw do
 
   # DELETE
   get("/delete_dish_has_ingredient/:id_to_remove", { :controller => "dish_has_ingredients", :action => "destroy_row" })
+  get("/delete_dish_has_ingredient_from_dish/:id_to_remove", { :controller => "dish_has_ingredients", :action => "destroy_row_from_dish" })
+  get("/delete_dish_has_ingredient_from_ingredient/:id_to_remove", { :controller => "dish_has_ingredients", :action => "destroy_row_from_ingredient" })
 
   #------------------------------
 
@@ -37,6 +39,8 @@ Rails.application.routes.draw do
 
   # DELETE
   get("/delete_bill_has_ingredient/:id_to_remove", { :controller => "bill_has_ingredients", :action => "destroy_row" })
+  get("/delete_bill_has_ingredient_from_bill/:id_to_remove", { :controller => "bill_has_ingredients", :action => "destroy_row_from_bill" })
+  get("/delete_bill_has_ingredient_from_ingredient/:id_to_remove", { :controller => "bill_has_ingredients", :action => "destroy_row_from_ingredient" })
 
   #------------------------------
 
@@ -75,6 +79,7 @@ Rails.application.routes.draw do
 
   # DELETE
   get("/delete_bill/:id_to_remove", { :controller => "bills", :action => "destroy_row" })
+  get("/delete_bill_from_user/:id_to_remove", { :controller => "bills", :action => "destroy_row_from_user" })
 
   #------------------------------
 
@@ -103,6 +108,7 @@ Rails.application.routes.draw do
 
   # DELETE
   get("/delete_ingredient/:id_to_remove", { :controller => "ingredients", :action => "destroy_row" })
+  get("/delete_ingredient_from_director/:id_to_remove", { :controller => "ingredients", :action => "destroy_row_from_director" })
 
   #------------------------------
 

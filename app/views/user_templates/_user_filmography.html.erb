@@ -1,0 +1,23 @@
+<div class="card">
+  <div class="card-header d-flex align-items-center justify-content-between">
+    Filmography
+
+    <a data-toggle="collapse" href="#user_filmography_new_form">
+      Add ingredient
+    </a>
+  </div>
+
+  <ul class="list-group list-group-flush">
+    <% @user.filmography.each do |ingredient| %>
+      <li class="list-group-item d-flex align-items-center justify-content-between">
+        <!-- Show link start -->
+        <a href="/ingredients/<%= ingredient.id %>">
+          <%= ingredient.name %>
+        </a>
+        <!-- Show link end -->
+
+      </li>
+    <% end %>
+
+  </ul>
+</div>
