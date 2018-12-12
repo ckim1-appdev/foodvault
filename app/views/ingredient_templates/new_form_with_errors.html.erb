@@ -1,0 +1,104 @@
+<!-- Validation failure messages -->
+<% if @ingredient.present? %>
+  <% if @ingredient.errors.any? %>
+    <% @ingredient.errors.full_messages.each do |message| %>
+      <div class="alert alert-danger">
+        <%= message %>
+      </div>
+    <% end %>
+  <% end %>
+<% end %>
+
+<h1>
+  Add a new ingredient
+</h1>
+
+
+<hr>
+
+<!-- Form ingredient start -->
+<form action="/create_ingredient" method="post">
+<!-- Form ingredient end -->
+
+  <!-- Label and input for name start -->
+  <div class="form-group">
+    <label for="name">
+      Name
+    </label>
+
+    <!-- Input for name start -->
+    <textarea id="name" name="name" class="form-control" rows="3"><%= @ingredient.name %></textarea>
+    <!-- Input for name end -->
+  </div>
+  <!-- Label and input for name end -->
+
+  <!-- Label and input for quality start -->
+  <div class="form-group">
+    <label for="quality">
+      Quality
+    </label>
+
+    <!-- Input for quality start -->
+    <textarea id="quality" name="quality" class="form-control" rows="3"><%= @ingredient.quality %></textarea>
+    <!-- Input for quality end -->
+  </div>
+  <!-- Label and input for quality end -->
+
+  <!-- Label and input for food_group start -->
+  <div class="form-group">
+    <label for="food_group">
+      Food group
+    </label>
+
+    <!-- Input for food_group start -->
+    <textarea id="food_group" name="food_group" class="form-control" rows="3"><%= @ingredient.food_group %></textarea>
+    <!-- Input for food_group end -->
+  </div>
+  <!-- Label and input for food_group end -->
+
+  <!-- Label and input for picture start -->
+  <div class="form-group">
+    <label for="picture">
+      Picture
+    </label>
+
+    <!-- Input for picture start -->
+    <input type="text" id="picture" name="picture" class="form-control" value="<%= @ingredient.picture %>">
+    <!-- Input for picture end -->
+  </div>
+  <!-- Label and input for picture end -->
+
+  <!-- Label and input for image start -->
+  <div class="form-group">
+    <label for="image">
+      Image
+    </label>
+
+    <!-- Input for image start -->
+    <input type="text" id="image" name="image" class="form-control" value="<%= @ingredient.image %>">
+    <!-- Input for image end -->
+  </div>
+  <!-- Label and input for image end -->
+
+  <!-- Label and input for user_id start -->
+  <div class="form-group">
+    <label for="user_id">
+      User
+    </label>
+
+    <!-- Input for user_id start -->
+    <input type="text" id="user_id" name="user_id" class="form-control" value="<%= @ingredient.user_id %>">
+    <!-- Input for user_id end -->
+  </div>
+  <!-- Label and input for user_id end -->
+
+  <button class="btn btn-block btn-outline-secondary">
+    Create ingredient
+  </button>
+</form>
+
+<hr>
+
+<a href="/ingredients">
+  Go back
+</a>
