@@ -16,6 +16,10 @@ class Ingredient < ApplicationRecord
 
   # Indirect associations
 
+  has_many   :dishes,
+             :through => :dishhasingredients,
+             :source => :dish
+
   # Validations
 
   validates :name, :presence => true

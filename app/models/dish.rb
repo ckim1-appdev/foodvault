@@ -7,6 +7,10 @@ class Dish < ApplicationRecord
 
   # Indirect associations
 
+  has_many   :ingredients,
+             :through => :dishhasingredients,
+             :source => :ingredient
+
   # Validations
 
   validates :name, :presence => true
