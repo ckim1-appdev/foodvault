@@ -1,6 +1,10 @@
 class Ingredient < ApplicationRecord
   # Direct associations
 
+  has_many   :billhasingredients,
+             :class_name => "BillHasIngredient",
+             :dependent => :nullify
+
   # Indirect associations
 
   # Validations
