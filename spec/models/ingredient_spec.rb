@@ -14,6 +14,8 @@ RSpec.describe Ingredient, type: :model do
 
     describe "InDirect Associations" do
 
+    it { should have_many(:bills) }
+
     it { should have_many(:dishes) }
 
     end

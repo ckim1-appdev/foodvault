@@ -12,6 +12,8 @@ RSpec.describe Bill, type: :model do
 
     describe "InDirect Associations" do
 
+    it { should have_many(:ingredients) }
+
     end
 
     describe "Validations" do

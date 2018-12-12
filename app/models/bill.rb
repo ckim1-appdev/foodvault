@@ -10,6 +10,10 @@ class Bill < ApplicationRecord
 
   # Indirect associations
 
+  has_many   :ingredients,
+             :through => :billhasingredients,
+             :source => :ingredient
+
   # Validations
 
 end
