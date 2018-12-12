@@ -25,7 +25,7 @@ class IngredientsController < ApplicationController
     @ingredient.name = params.fetch("name")
     @ingredient.quality = params.fetch("quality")
     @ingredient.food_group = params.fetch("food_group")
-    @ingredient.picture = params.fetch("picture")
+    @ingredient.picture = params.fetch("picture") if params.key?("picture")
     @ingredient.image = params.fetch("image")
     @ingredient.user_id = params.fetch("user_id")
 
@@ -50,7 +50,7 @@ class IngredientsController < ApplicationController
     @ingredient.name = params.fetch("name")
     @ingredient.quality = params.fetch("quality")
     @ingredient.food_group = params.fetch("food_group")
-    @ingredient.picture = params.fetch("picture")
+    @ingredient.picture = params.fetch("picture") if params.key?("picture")
     @ingredient.image = params.fetch("image")
     @ingredient.user_id = params.fetch("user_id")
 

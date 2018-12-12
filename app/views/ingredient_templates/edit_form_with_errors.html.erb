@@ -14,7 +14,7 @@
 <hr>
 
 <!-- Form ingredient start -->
-<form action="/update_ingredient/<%= @ingredient.id %>" method="post">
+<form action="/update_ingredient/<%= @ingredient.id %>" method="post" enctype="multipart/form-data">
 <!-- Form ingredient end -->
 
   <!-- Label and input for name start -->
@@ -60,7 +60,8 @@
     </label>
 
     <!-- Input for picture start -->
-    <input type="text" id="picture" name="picture" class="form-control" value="<%= @ingredient.picture %>">
+    <%= cl_image_tag(@ingredient.picture.to_s, :width => 90, :height => 90, :crop => :thumb) %>
+    <input type="file" id="picture" name="picture" class="form-control">
     <!-- Input for picture end -->
   </div>
   <!-- Label and input for picture end -->

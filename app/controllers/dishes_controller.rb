@@ -24,7 +24,7 @@ class DishesController < ApplicationController
     @dish.name = params.fetch("name")
     @dish.cuisine = params.fetch("cuisine")
     @dish.meal_category = params.fetch("meal_category")
-    @dish.picture = params.fetch("picture")
+    @dish.picture = params.fetch("picture") if params.key?("picture")
     @dish.description = params.fetch("description")
     @dish.ingredient_count = params.fetch("ingredient_count")
 
@@ -49,7 +49,7 @@ class DishesController < ApplicationController
     @dish.name = params.fetch("name")
     @dish.cuisine = params.fetch("cuisine")
     @dish.meal_category = params.fetch("meal_category")
-    @dish.picture = params.fetch("picture")
+    @dish.picture = params.fetch("picture") if params.key?("picture")
     @dish.description = params.fetch("description")
     @dish.ingredient_count = params.fetch("ingredient_count")
 

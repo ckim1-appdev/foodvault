@@ -17,7 +17,7 @@
 <hr>
 
 <!-- Form dish start -->
-<form action="/create_dish" method="post">
+<form action="/create_dish" method="post" enctype="multipart/form-data">
 <!-- Form dish end -->
 
   <!-- Label and input for name start -->
@@ -63,7 +63,7 @@
     </label>
 
     <!-- Input for picture start -->
-    <input type="text" id="picture" name="picture" class="form-control" value="<%= @dish.picture %>">
+    <input type="file" id="picture" name="picture" class="form-control">
     <!-- Input for picture end -->
   </div>
   <!-- Label and input for picture end -->
