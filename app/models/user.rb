@@ -1,6 +1,10 @@
 class User < ApplicationRecord
   # Direct associations
 
+  has_many   :filmography,
+             :class_name => "Ingredient",
+             :dependent => :nullify
+
   # Indirect associations
 
   # Validations

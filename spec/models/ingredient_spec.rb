@@ -4,6 +4,8 @@ RSpec.describe Ingredient, type: :model do
   
     describe "Direct Associations" do
 
+    it { should belong_to(:director) }
+
     it { should have_many(:dishhasingredients) }
 
     it { should have_many(:billhasingredients) }

@@ -1,6 +1,11 @@
 class Ingredient < ApplicationRecord
   # Direct associations
 
+  belongs_to :director,
+             :class_name => "User",
+             :foreign_key => "user_id",
+             :counter_cache => :filmography_count
+
   has_many   :dishhasingredients,
              :class_name => "DishHasIngredient",
              :dependent => :nullify
