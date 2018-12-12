@@ -10,26 +10,20 @@
   <ul class="list-group list-group-flush">
     <% @ingredient.billhasingredients.each do |bill_has_ingredient| %>
       <li class="list-group-item d-flex align-items-center justify-content-between">
-        <!-- Show link start -->
         <a href="/bill_has_ingredients/<%= bill_has_ingredient.id %>">
           <%= bill_has_ingredient.bill_id %>
         </a>
-        <!-- Show link end -->
 
-        <!-- Delete link start -->
         <a href="/delete_bill_has_ingredient_from_ingredient/<%= bill_has_ingredient.id %>">
           Delete
         </a>
-        <!-- Delete link end -->
 
       </li>
     <% end %>
 
     <div class="card-footer">
       <div class="collapse" id="ingredient_billhasingredients_new_form">
-        <!-- New associationcollection form start -->
         <%= render partial: "ingredient_templates/ingredient_billhasingredients_new_form" %>
-        <!-- New associationcollection form end -->
       </div>
     </div>
 

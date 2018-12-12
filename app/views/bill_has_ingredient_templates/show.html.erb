@@ -11,28 +11,23 @@
         </a>
       </div>
 
-      <!-- Edit link bill_has_ingredient start -->
       <div class="col">
         <a href="/bill_has_ingredients/<%= @bill_has_ingredient.id %>/edit" class="btn btn-block btn-outline-secondary">
           Edit bill has ingredient
         </a>
       </div>
-      <!-- Edit link bill_has_ingredient end -->
 
-      <!-- Delete link bill_has_ingredient start -->
       <div class="col">
         <a href="/delete_bill_has_ingredient/<%= @bill_has_ingredient.id %>" class="btn btn-block btn-outline-secondary">
           Delete bill has ingredient
         </a>
       </div>
-      <!-- Delete link bill_has_ingredient end -->
     </div>
 
     <dl>
       <dt>
         Bill
       </dt>
-      <!-- Display bill_id start -->
       <dd>
         <% if @bill_has_ingredient.bill.present? %>
           <a href="/bills/<%= @bill_has_ingredient.bill_id %>">
@@ -40,12 +35,10 @@
           </a>
         <% end %>
       </dd>
-      <!-- Display bill_id end -->
 
       <dt>
         Ingredient
       </dt>
-      <!-- Display ingredient_id start -->
       <dd>
         <% if @bill_has_ingredient.ingredient.present? %>
           <a href="/ingredients/<%= @bill_has_ingredient.ingredient_id %>">
@@ -53,46 +46,35 @@
           </a>
         <% end %>
       </dd>
-      <!-- Display ingredient_id end -->
 
       <dt>
         Quantity
       </dt>
-      <!-- Display quantity start -->
       <dd>
         <%= @bill_has_ingredient.quantity %>
       </dd>
-      <!-- Display quantity end -->
 
       <dt>
         Bill ingredient unit
       </dt>
-      <!-- Display bill_ingredient_unit start -->
       <dd>
         <%= @bill_has_ingredient.bill_ingredient_unit %>
       </dd>
-      <!-- Display bill_ingredient_unit end -->
 
       <dt>
         Created at
       </dt>
-      <!-- Display created_at start -->
       <dd>
         <%= time_ago_in_words(@bill_has_ingredient.created_at) %> ago
       </dd>
-      <!-- Display created_at end -->
 
       <dt>
         Updated at
       </dt>
-      <!-- Display updated_at start -->
       <dd>
         <%= time_ago_in_words(@bill_has_ingredient.updated_at) %> ago
       </dd>
-      <!-- Display updated_at end -->
     </dl>
   </div>
 </div>
 
-<!-- Show Page Customization starts -->
-<!-- Show Page Customization end -->

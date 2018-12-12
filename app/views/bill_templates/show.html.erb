@@ -11,7 +11,6 @@
         </a>
       </div>
 
-      <!-- Edit link bill start -->
       <div class="col">
         <% if current_user == @bill.user %>
           <a href="/bills/<%= @bill.id %>/edit" class="btn btn-block btn-sm btn-outline-secondary">
@@ -19,9 +18,7 @@
           </a>
         <% end %>
       </div>
-      <!-- Edit link bill end -->
 
-      <!-- Delete link bill start -->
       <div class="col">
         <% if current_user == @bill.user %>
           <a href="/delete_bill/<%= @bill.id %>" class="btn btn-block btn-sm btn-outline-secondary">
@@ -29,50 +26,40 @@
           </a>
         <% end %>
       </div>
-      <!-- Delete link bill end -->
     </div>
 
     <dl>
       <dt>
         Date purchased
       </dt>
-      <!-- Display date_purchased start -->
       <dd>
         <%= @bill.date_purchased %>
       </dd>
-      <!-- Display date_purchased end -->
 
       <dt>
         Ingredient count
       </dt>
-      <!-- Display ingredient_count start -->
       <dd>
         <%= @bill.ingredient_count %>
       </dd>
-      <!-- Display ingredient_count end -->
 
       <dt>
         Grocery store
       </dt>
-      <!-- Display grocery_store start -->
       <dd>
         <%= @bill.grocery_store %>
       </dd>
-      <!-- Display grocery_store end -->
 
       <dt>
         Price
       </dt>
-      <!-- Display price start -->
       <dd>
         <%= @bill.price %>
       </dd>
-      <!-- Display price end -->
 
       <dt>
         User
       </dt>
-      <!-- Display user_id start -->
       <dd>
         <% if @bill.user.present? %>
           <a href="/users/<%= @bill.user_id %>">
@@ -80,30 +67,24 @@
           </a>
         <% end %>
       </dd>
-      <!-- Display user_id end -->
 
       <dt>
         Created at
       </dt>
-      <!-- Display created_at start -->
       <dd>
         <%= time_ago_in_words(@bill.created_at) %> ago
       </dd>
-      <!-- Display created_at end -->
 
       <dt>
         Updated at
       </dt>
-      <!-- Display updated_at start -->
       <dd>
         <%= time_ago_in_words(@bill.updated_at) %> ago
       </dd>
-      <!-- Display updated_at end -->
     </dl>
   </div>
 </div>
 
-<!-- Show Page Customization starts -->
 <div class="row mb-3">
   <div class="col-md-8 offset-md-2">
     <%= render partial: "bill_templates/bill_billhasingredients" %>
@@ -115,4 +96,3 @@
     <%= render partial: "bill_templates/bill_ingredients" %>
   </div>
 </div>
-<!-- Show Page Customization end -->

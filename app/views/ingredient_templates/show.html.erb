@@ -11,73 +11,58 @@
         </a>
       </div>
 
-      <!-- Edit link ingredient start -->
       <div class="col">
         <a href="/ingredients/<%= @ingredient.id %>/edit" class="btn btn-block btn-outline-secondary">
           Edit ingredient
         </a>
       </div>
-      <!-- Edit link ingredient end -->
 
-      <!-- Delete link ingredient start -->
       <div class="col">
         <a href="/delete_ingredient/<%= @ingredient.id %>" class="btn btn-block btn-outline-secondary">
           Delete ingredient
         </a>
       </div>
-      <!-- Delete link ingredient end -->
     </div>
 
     <dl>
       <dt>
         Name
       </dt>
-      <!-- Display name start -->
       <dd>
         <%= @ingredient.name %>
       </dd>
-      <!-- Display name end -->
 
       <dt>
         Quality
       </dt>
-      <!-- Display quality start -->
       <dd>
         <%= @ingredient.quality %>
       </dd>
-      <!-- Display quality end -->
 
       <dt>
         Food group
       </dt>
-      <!-- Display food_group start -->
       <dd>
         <%= @ingredient.food_group %>
       </dd>
-      <!-- Display food_group end -->
 
       <dt>
         Picture
       </dt>
-      <!-- Display picture start -->
       <dd>
         <img src="<%= @ingredient.picture %>" class="img-fluid">
       </dd>
-      <!-- Display picture end -->
 
       <dt>
         Image
       </dt>
-      <!-- Display image start -->
       <dd>
         <%= @ingredient.image %>
       </dd>
-      <!-- Display image end -->
 
       <dt>
         User
       </dt>
-      <!-- Display user_id start -->
       <dd>
         <% if @ingredient.director.present? %>
           <a href="/users/<%= @ingredient.user_id %>">
@@ -85,30 +70,24 @@
           </a>
         <% end %>
       </dd>
-      <!-- Display user_id end -->
 
       <dt>
         Created at
       </dt>
-      <!-- Display created_at start -->
       <dd>
         <%= time_ago_in_words(@ingredient.created_at) %> ago
       </dd>
-      <!-- Display created_at end -->
 
       <dt>
         Updated at
       </dt>
-      <!-- Display updated_at start -->
       <dd>
         <%= time_ago_in_words(@ingredient.updated_at) %> ago
       </dd>
-      <!-- Display updated_at end -->
     </dl>
   </div>
 </div>
 
-<!-- Show Page Customization starts -->
 <div class="row mb-3">
   <div class="col-md-8 offset-md-2">
     <%= render partial: "ingredient_templates/ingredient_billhasingredients" %>
@@ -132,4 +111,3 @@
     <%= render partial: "ingredient_templates/ingredient_bills" %>
   </div>
 </div>
-<!-- Show Page Customization end -->
