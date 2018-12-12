@@ -49,7 +49,7 @@ class BillsController < ApplicationController
     @bill.ingredient_count = params.fetch("ingredient_count")
     @bill.grocery_store = params.fetch("grocery_store")
     @bill.price = params.fetch("price")
-    @bill.user_id = params.fetch("user_id")
+    
 
     if @bill.valid?
       @bill.save
