@@ -4,6 +4,8 @@ RSpec.describe Bill, type: :model do
   
     describe "Direct Associations" do
 
+    it { should have_many(:billhasingredients) }
+
     it { should belong_to(:user) }
 
     end
