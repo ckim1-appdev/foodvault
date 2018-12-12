@@ -1,4 +1,6 @@
 ActiveAdmin.register BillHasIngredient do
+
+ permit_params :bill_id, :ingredient_id, :quantity, :bill_ingredient_unit
 # See permitted parameters documentation:
 # https://github.com/activeadmin/activeadmin/blob/master/docs/2-resource-customization.md#setting-up-strong-parameters
 #
