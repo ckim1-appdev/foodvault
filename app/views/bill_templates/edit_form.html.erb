@@ -1,0 +1,80 @@
+<h1>
+  Edit bill #<%= @bill.id %>
+</h1>
+
+<hr>
+
+<!-- Form bill start -->
+<form action="/update_bill/<%= @bill.id %>" method="post">
+<!-- Form bill end -->
+
+  <!-- Label and input for date_purchased start -->
+  <div class="form-group">
+    <label for="date_purchased">
+      Date purchased
+    </label>
+
+    <!-- Input for date_purchased start -->
+    <input type="text" id="date_purchased" name="date_purchased" class="form-control" value="<%= @bill.date_purchased %>">
+    <!-- Input for date_purchased end -->
+  </div>
+  <!-- Label and input for date_purchased end -->
+
+  <!-- Label and input for ingredient_count start -->
+  <div class="form-group">
+    <label for="ingredient_count">
+      Ingredient count
+    </label>
+
+    <!-- Input for ingredient_count start -->
+    <input type="text" id="ingredient_count" name="ingredient_count" class="form-control" value="<%= @bill.ingredient_count %>">
+    <!-- Input for ingredient_count end -->
+  </div>
+  <!-- Label and input for ingredient_count end -->
+
+  <!-- Label and input for grocery_store start -->
+  <div class="form-group">
+    <label for="grocery_store">
+      Grocery store
+    </label>
+
+    <!-- Input for grocery_store start -->
+    <textarea id="grocery_store" name="grocery_store" class="form-control" rows="3"><%= @bill.grocery_store %></textarea>
+    <!-- Input for grocery_store end -->
+  </div>
+  <!-- Label and input for grocery_store end -->
+
+  <!-- Label and input for price start -->
+  <div class="form-group">
+    <label for="price">
+      Price
+    </label>
+
+    <!-- Input for price start -->
+    <input type="text" id="price" name="price" class="form-control" value="<%= @bill.price %>">
+    <!-- Input for price end -->
+  </div>
+  <!-- Label and input for price end -->
+
+  <!-- Label and input for user_id start -->
+  <div class="form-group">
+    <label for="user_id">
+      User
+    </label>
+
+    <!-- Input for user_id start -->
+    <input type="text" id="user_id" name="user_id" class="form-control" value="<%= @bill.user_id %>">
+    <!-- Input for user_id end -->
+  </div>
+  <!-- Label and input for user_id end -->
+
+  <button class="btn btn-block btn-outline-secondary">
+    Update bill
+  </button>
+</form>
+
+<hr>
+
+<a href="/bills">
+  Go back
+</a>
