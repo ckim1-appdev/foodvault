@@ -10,7 +10,7 @@ class BillsController < ApplicationController
   end
 
   def index
-    @bills = Bill.all
+    @bills = current_user.bills.page(params[:page]).per(10)
 
     render("bill_templates/index.html.erb")
   end
