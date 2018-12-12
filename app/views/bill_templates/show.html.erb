@@ -13,17 +13,21 @@
 
       <!-- Edit link bill start -->
       <div class="col">
-        <a href="/bills/<%= @bill.id %>/edit" class="btn btn-block btn-outline-secondary">
-          Edit bill
-        </a>
+        <% if current_user == @bill.user %>
+          <a href="/bills/<%= @bill.id %>/edit" class="btn btn-block btn-sm btn-outline-secondary">
+            Edit bill
+          </a>
+        <% end %>
       </div>
       <!-- Edit link bill end -->
 
       <!-- Delete link bill start -->
       <div class="col">
-        <a href="/delete_bill/<%= @bill.id %>" class="btn btn-block btn-outline-secondary">
-          Delete bill
-        </a>
+        <% if current_user == @bill.user %>
+          <a href="/delete_bill/<%= @bill.id %>" class="btn btn-block btn-sm btn-outline-secondary">
+            Delete bill
+          </a>
+        <% end %>
       </div>
       <!-- Delete link bill end -->
     </div>
